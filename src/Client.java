@@ -29,6 +29,7 @@ public class Client {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
             User user = client.invoke("createUser", new Object[]{"bob", "the builder", "password"}, User.class);
+            System.out.println(user.getPassword());
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
