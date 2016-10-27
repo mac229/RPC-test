@@ -4,7 +4,7 @@
 public class UserServiceImpl implements UserService {
 
     public User createUser(String userName, String firstName, String password) {
-        System.out.print("createUSer");
+        System.out.println("createUSer");
         User user = new User();
         user.setUserName(userName);
         user.setFirstName(firstName);
@@ -13,18 +13,18 @@ public class UserServiceImpl implements UserService {
     }
 
     public User createUser(String userName, String password) {
-        System.out.print("createUSer");
+        System.out.println("createUSer");
         return this.createUser(userName, null, password);
     }
 
     public User findUserByUserName(String userName) {
-        System.out.print("find");
+        System.out.println("find");
         //return database.findUserByUserName(userName);
         return null;
     }
 
     public int getUserCount() {
-        System.out.print("getUserCount");
+        System.out.println("getUserCount");
         //return database.getUserCount();
         return 0;
     }
