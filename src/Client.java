@@ -15,7 +15,7 @@ import java.net.URL;
  * Created by maciej on 26.10.16.
  */
 public class Client {
-
+//zmiana !!
     public static void main(String[] args) throws IOException {
         System.out.println("Hello World!");
         BasicConfigurator.configure();
