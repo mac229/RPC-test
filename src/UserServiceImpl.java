@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by maciej on 26.10.16.
  */
 public class UserServiceImpl implements UserService {
+
+    private List<User> userList = new ArrayList<User>();
 
     public User createUser(String userName, String firstName, String password) {
         System.out.println("createUSer");
@@ -9,24 +14,25 @@ public class UserServiceImpl implements UserService {
         user.setUserName(userName);
         user.setFirstName(firstName);
         user.setPassword(password);
-        return user;
-    }
 
-    public User createUser(String userName, String password) {
-        System.out.println("createUSer");
-        return this.createUser(userName, null, password);
+        userList.add(user);
+        return user;
     }
 
     public User findUserByUserName(String userName) {
         System.out.println("find");
-        //return database.findUserByUserName(userName);
+        for (User user : userList) {
+            if (user.getUserName().equals(userName)) {
+                return user;
+            }
+        }
+
         return null;
     }
 
     public int getUserCount() {
         System.out.println("getUserCount");
-        //return database.getUserCount();
-        return 0;
+        return userList.size();
     }
 
 }
